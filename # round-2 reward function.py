@@ -14,11 +14,9 @@ def reward_function(params):
     speed_reward = (abs_speed_reward - min_speed_reward) / (max_speed_reward - min_speed_reward) * speed_weight
     
     # - - - - - 
-    
     # Penalise if the car goes off track-possible to chnage the reward after first training
     if not params['all_wheels_on_track']:
         return 1e-3
-    
     # - - - - - 
     
     # Calculate the direction of the center line based on the closest waypoints 
